@@ -10,14 +10,15 @@ const int: number = 5
 const bool: boolean = true || false 
 
 
-// The type of the data that is returned by a function goes after the opening parenthesis for a function. 
+/* The type declaration for a functon goes after the opening parenthesis for a function, and describes the type of the data 
+that is returned by the function */
 
 const func = (): string => {
     return 'test'
 }
 
-function getString(): string {
-    return 'test'
+function getNumber(input: number): string {
+    return input.toString() 
 }
 
 
