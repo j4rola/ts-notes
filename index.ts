@@ -17,7 +17,7 @@ const func = (): string => {
     return 'test'
 }
 
-function getNumber(input: number): string {
+function getString(input: number): string {
     return input.toString() 
 }
 
