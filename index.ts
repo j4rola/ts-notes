@@ -9,6 +9,12 @@ const int: number = 5
 
 const bool: boolean = true || false 
 
+const stringArray: string[] = ['test0', 'test1']  
+
+const object: object = {} 
+
+const objectArray: object[] = [{test1: 'test1'}, {test2: 'test2'}]  
+
 
 /* The type declaration for a functon goes after the opening parenthesis for a function, and describes the type of the data 
 that is returned by the function */
@@ -76,7 +82,62 @@ concrete options for what the values that fill the type are allowed to be. Types
 'FoodTemps' type is assigned a string that is not one of the three strings below. 
 */
 
-type FoodTemps = 'hot' | 'cold' | 'lukewarm'
+type FoodTemps = 'hot' | 'cold' | 'lukewarm' 
 
-type DoILookOk = true | 'Oh my, look at the time.' | false 
+type DoILookOk = true | 'Oh my, look at the time.' | false  
+
+//Generics 
+/* Generics are type variables that can be used when dealing with situations where the data type is unknown */ 
+
+
+interface Team<x> {
+
+    city: string;
+    name: string;
+    id: x; 
+
+}
+
+//Notice that the generic allows us to determine what type some values will be after we define the interface.
+//The two Team objects below can each have an Id with a different type
+
+const patriots: Team<string> = {
+ 
+    city: 'New England',
+    name: 'Patriots',
+    id: '7'
+
+}
+
+const chargers: Team<number> = {
+
+    city: 'Los Angeles',
+    name: 'Chargers',
+    id: 5
+
+}
+
+const packers: Partial<Team<string>> = { 
+    city: 'Green Bay',
+    name: 'Packers',
+    id: '10'
+}
+
+// For functions, the type variable is assigned right after the function name, assigned to argument, and optionally assigned
+//as the return value of the function as well 
+
+function test<T>(x: T): T {  
+    return x 
+} 
+
+//If we want our function to return something other than the generic type, we can just leave off the explicit return type
+
+function test1<T>(x: T) {  
+    return x + 'added string' 
+} 
+
+
+
+
+
 
