@@ -123,14 +123,15 @@ const packers: Partial<Team<string>> = {
     id: '10'
 }
 
-// For functions, the type variable is assigned right after the function name, assigned to argument, and optionally assigned
-//as the return value of the function as well 
+// For functions, the type variable is assigned right after the function name to signify that the argument/s of the function will
+// have an unknown type. The type variable is assigned to the argument, and optionally assigned
+// as the return value of the function. 
 
 function test<T>(x: T): T {  
     return x 
 } 
 
-//If we want our function to return something other than the generic type, we can just leave off the explicit return type
+//If we want our function to return something other than the generic type, we can just leave off the explicit return type as so
 
 function test1<T>(x: T) {  
     return x + 'added string' 
