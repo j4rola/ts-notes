@@ -19,8 +19,8 @@ const objectArray: object[] = [{test1: 'test1'}, {test2: 'test2'}]
 /* The type declaration for a functon goes after the opening parenthesis for a function, and describes the type of the data 
 that is returned by the function */
 
-const func = (): string => {
-    return 'test'
+const func = (): string => {  
+    return 'test'  
 }
 
 function getString(input: number): string {
@@ -118,9 +118,10 @@ const chargers: Team<number> = {
 }
 
 const packers: Partial<Team<string>> = { 
-    city: 'Green Bay',
-    name: 'Packers',
-    id: '10'
+    
+    name: 'Packers', 
+    id: '10' 
+
 }
 
 // For functions, the type variable is assigned right after the function name to signify that the argument/s of the function will
