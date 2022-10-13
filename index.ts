@@ -1,13 +1,40 @@
 //My notes on typescript syntax in no particular order
 
 
-//Basic types 
+// All Primitive Types  
 
-const str: string = 'this is a string' 
+const str: string = 'a string' 
 
-const int: number = 5 
+const num: number = 5 
 
-const bool: boolean = true || false 
+const bool: boolean = true
+
+const sym: symbol = Symbol('my symbol') 
+
+const bigNumber: bigint = 9n 
+
+const nullValue: null = null 
+
+const undefinedValue: undefined = undefined 
+
+const anyValue: any = 'a string' + 5  
+
+const unknownValue: unknown = 'x' 
+
+// void describes a function that does not return anything
+const voidFunc = (a: number, b: number): void => { 
+    console.log(a + b)
+} 
+
+// never describes a function that does not possess a reachable end point
+const neverFunc = (): never => {
+    while ( true ) { 
+    console.log('This is an infinite loop.')
+    }
+}
+
+
+//More complex types 
 
 const stringArray: string[] = ['test0', 'test1']  
 
@@ -15,6 +42,9 @@ const object: object = {}
 
 const objectArray: object[] = [{test1: 'test1'}, {test2: 'test2'}]  
 
+ 
+
+//Functions 
 
 /* The type declaration for a functon goes after the opening parenthesis for a function, and describes the type of the data 
 that is returned by the function */
@@ -110,7 +140,7 @@ const patriots: Team<string> = {
 }
 
 const chargers: Team<number> = {
-
+ 
     city: 'Los Angeles',
     name: 'Chargers',
     id: 5
@@ -131,6 +161,7 @@ const packers: Partial<Team<string>> = {
 function test<T>(x: T): T {  
     return x 
 } 
+
 
 //If we want our function to return something other than the generic type, we can just leave off the explicit return type as so
 
