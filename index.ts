@@ -42,7 +42,6 @@ const object: object = {}
 
 const objectArray: object[] = [{test1: 'test1'}, {test2: 'test2'}]  
 
- 
 
 //Functions 
 
@@ -163,7 +162,7 @@ function test<T>(x: T): T {
 } 
 
 
-//If we want our function to return something other than the generic type, we can just leave off the explicit return type as so
+//If we want our function to return something other than the generic type, we can just leave off the explicit return type like so
 
 function test1<T>(x: T) {  
     return x + 'added string' 
